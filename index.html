@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type Website</title>
+</head>
+<body>
+	<form onsubmit="handleSubmit(event)">
+    <input id="tylc1" type="text" placeholder="Enter lv..." >
+
+	<input id="tylcn" type="text" placeholder="Enter lv..." >
+	<button type="submit">Submit</button>
+	</form>
+	<form onsubmit="handleSubmitt(event)">
+	<input id="y" type="text" placeholder="Enter day..." >
+
+	<input id="ylcl" type="text" placeholder="Enter curlv..." >
+	<button type="submit">Submit</button>
+</form>
+	<p id="out"></p>
+	<p id="ot"></p>
+
+
+</body>
+<script>
+	 function handleSubmit(event){ 
+	
+		let lcl1 = parseFloat(document.getElementById("tylc1").value);
+		let lcln = parseFloat(document.getElementById("tylcn").value);	
+		event.preventDefault();
+		let a = (lcl1 * (lcl1 + 1)) / 2 * 100;
+		let b = (lcln * (lcln + 1)) / 2 * 100;
+         
+		document.getElementById("out").innerHTML = b - a; 
+		
+
+	};
+	 function handleSubmitt(event){ 
+		let c = parseFloat(document.getElementById("y").value);
+		event.preventDefault();
+		let a = 100 * c; 
+        let q = parseFloat(document.getElementById("ylcl").value); 
+        const lclarray = [];
+        let lcldon = 0;
+        for(let i = q * 100; lcldon <= a; i+=100){
+        	
+        	lclarray.push(i);
+        	lcldon += i;
+        }
+        const b = lclarray.length - 1;
+        document.getElementById("ot").innerHTML = b + q;
+	};
+
+
+</script>
+</html>
